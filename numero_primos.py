@@ -23,18 +23,27 @@ def obtenerNumerosPrimos(numero_primo):
 
 
 def esPrimo(numero):
-    if(numero == 2 or numero == 3):
-        obtenerNumerosPrimos(numero)
+    seguir = True
+    newNumber = numero
+
+    while (seguir):
+        if (newNumber > 0):
+            seguir = False
+        else:
+            newNumber = int(input("Ingrese un numero entero positivo-->"))
+
+    if(newNumber == 2 or newNumber == 3):
+        obtenerNumerosPrimos(newNumber)
     else:
         contador = 0
-        if(numero % 2 == 0):
+        if(newNumber % 2 == 0):
             return False
         else:
-            for i in range(2, numero):
-                if(numero % i == 0):
+            for i in range(2, newNumber):
+                if(newNumber % i == 0):
                     contador = contador + 1
             if(contador == 0):
-                obtenerNumerosPrimos(numero)
+                obtenerNumerosPrimos(newNumber)
             else:
                 return False
 
